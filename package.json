@@ -9,6 +9,8 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
     "express": "^4.20.0"
   }
 }

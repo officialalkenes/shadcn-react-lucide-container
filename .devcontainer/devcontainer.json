@@ -1,23 +1,19 @@
-// .devcontainer/devcontainer.json
 {
-	"name": "React Environment, Lucide, and ShadCN Environment for Project",
-	"image": "mcr.microsoft.com/vscode/devcontainers/javascript-node:18", // Use Node 18 or adjust if needed
-	"postCreateCommand": "npm install -g create-react-app && create-react-app reactshadenv && cd reactshadenv && npm install tailwindcss postcss autoprefixer lucide-react && npx tailwindcss init -p && npm install -D @shadcn/ui && mkdir components",
+	"name": "React + Tailwind + shadcn/ui Development",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+	"features": {},
+	"forwardPorts": [5173],
 	"customizations": {
 	  "vscode": {
 		"extensions": [
 		  "dbaeumer.vscode-eslint",
 		  "esbenp.prettier-vscode",
-		  "bradlc.vscode-tailwindcss"
+		  "bradlc.vscode-tailwindcss",
+		  "formulahendry.auto-rename-tag",
+		  "christian-kohler.npm-intellisense",
+		  "dsznajder.es7-react-js-snippets"
 		]
 	  }
 	},
-	"forwardPorts": [3000],
-	"portsAttributes": {
-	  "3000": {
-		"label": "React App",
-		"onAutoForward": "openBrowser"
-	  }
-	}
-  }
-  
+	"postCreateCommand": "bash ./.devcontainer/setup.sh"
+}
